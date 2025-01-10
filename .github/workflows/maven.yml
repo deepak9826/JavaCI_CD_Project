@@ -32,6 +32,10 @@ jobs:
       
     - name: Run Spring Boot Application
       run: mvn spring-boot:run &
+    - name: Test API Endpoint
+      run: |
+        curl --silent --fail http://localhost:8080/welcome || exit 1
+        echo "API passed!"
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph

@@ -24,7 +24,10 @@ public class DemoApplication implements CommandLineRunner {
     public String welcome(){
         return "Welcome to Spring Boot";
     }
-
+    @GetMapping("/welcome2")    
+    public String welcome2(){
+        return "Welcome to Spring Boot 2";
+    }
     @Override
     public void run(String... args) throws Exception {
         // Call service methods to trigger the AOP logging
